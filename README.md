@@ -10,3 +10,5 @@ Na tiek to, suzinosime veliau :)
 <p align="center">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzU0W3fQUj1dKDWkjGdZo7HE_O23Bfn_UbxUDd2-FZikyCHpyOle7kY1WHCW5pUvJFECc&usqp=CAU" alt="butu gerai mazesne foto" title="as noriu but centre :D" width="300" height="auto" style="vertical-align:middle">
 </p>
+
+patestuojam
