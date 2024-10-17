@@ -8,3 +8,4 @@ shift + alt + up - kopijuoti eilute i virsu
 shift + alt + down - kopijuoti eilute i apacia
 jie bus change
 hello
+hi again
