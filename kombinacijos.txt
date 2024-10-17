@@ -1,4 +1,4 @@
-ctrl + s - failu saugojimas :P
+ctrl + s - failu saugojimas 
 ctrl + c - kopijavimas
 ctrl + v - iklijavimas 
 ctrl + z - veiksmas atgal
