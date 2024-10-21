@@ -1,0 +1,37 @@
+table{
+    border-collapse: collapse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 10px solid whitesmoke ;
+    background-color: white;
+}
+
+thead {
+    background-color: #3d89f7;
+    color:white
+}
+.id {
+    width: 50px;
+    
+}
+.firstName {
+    width: 150px;
+}
+.lastName {
+    width: 150px;
+}
+.email {
+    width: 300px;
+}
+td {
+    height: 40px;
+}
+h1 {
+    text-align: center;
+}
+div {
+    width: 650px;
+    background-color: whitesmoke;
+}
+tbody td {
+    border-bottom: 5px solid whitesmoke;
+}
