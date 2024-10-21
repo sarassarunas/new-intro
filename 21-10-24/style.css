@@ -3,6 +3,7 @@ table{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 10px solid whitesmoke ;
     background-color: white;
+    margin: 0 auto;
 }
 
 thead {
@@ -29,9 +30,12 @@ h1 {
     text-align: center;
 }
 div {
-    width: 650px;
+    /* width: 650px; */
     background-color: whitesmoke;
 }
 tbody td {
     border-bottom: 5px solid whitesmoke;
 }
+tr {
+    padding-left: 5px;
+}   
