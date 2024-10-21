@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-spacing: 0;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    
+    
+}
+td {
+    width: 200px;
+    height: 50px;
+    padding: 0;
+}
+thead {
+    background-color: #019879;
+    color: white;
+    font-weight: bold;
+}
+tbody tr:hover {
+    background-color: rgb(226, 218, 218);
+    color: #019879;
+    font-weight: bold;
+}
+div {
+    background-color: whitesmoke;
+    width: 1300px;
+}
+tbody tr {
+    background-color: white;
+    border-bottom: 5px solid whitesmoke;
+}
