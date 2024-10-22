@@ -12,12 +12,21 @@ thead {
     background-color: black;
     border-bottom: 3px solid darkgrey;
 }
-.pilka {
+/* .pilka {
     background-color: blanchedalmond;
 }
 .balta {
     background-color: white;
-}
+} */
 td {
     padding-left: 10px; 
+}
+tbody td:first-child {
+    border-right: 2px solid red;
+}
+tbody {
+    background-color: greenyellow;
+}
+tbody tr:nth-child(even) {
+    background-color: white;
 }
