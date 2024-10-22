@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(177, 174, 174);
+    margin-top: 75px;
+    margin-bottom: 100px;
+}
+.card {
+    width: 350px;
+    margin: 35px auto;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 5px 5px grey;
+}
+img {
+    width: 100%; 
+    height: 200px;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+    
+    
+}
+.text {
+    padding: 10px 35px 25px 25px;
+}
+.button {
+    color: blue;
+    border: 2px solid blue;
+    /* width: 125px; */
+    display: inline-block;
+    padding: 5px 10px;
+}
+.card:hover {
+    box-shadow: 0 0 15px 10px #7ac1fc;
+}
+.card:hover .button {
+    background-color: blue;
+    color: white;
+}
+.card:hover a {  
+    color: white;
+}
+h1 {
+    font-family: "Poppins", sans-serif;
+}
+p {
+    font-family: "Nokora", sans-serif;
+}
+a {
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: blue;
+    
+}

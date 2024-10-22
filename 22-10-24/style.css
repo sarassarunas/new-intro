@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(216, 213, 213);
+    font-family: "Open Sans", sans-serif;
+}
+.block {
+    width: 500px;
+    margin: 45px auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px 10px;
+}
+.button {
+    width: 75px;
+    margin: 0 auto;
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
