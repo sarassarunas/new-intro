@@ -1,0 +1,23 @@
+body {
+    background-color: aqua;
+    margin: 10px 150px;
+}
+table {
+    color: grey;
+    border-collapse: collapse;
+    margin-top: 25px; 
+    
+}
+thead {
+    background-color: black;
+    border-bottom: 3px solid darkgrey;
+}
+.pilka {
+    background-color: blanchedalmond;
+}
+.balta {
+    background-color: white;
+}
+td {
+    padding-left: 10px; 
+}
