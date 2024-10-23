@@ -1,0 +1,20 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+.main{
+    width: 80%;
+    margin: 45px auto;
+}
+.photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.photo {
+    width: 20%;
+
+}
+.photo img {
+    width: 100%;
+}
