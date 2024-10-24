@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    margin: 0;
+}
+header div {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+header {
+    background-color: grey;
+    height: 60px;
+}
+.logo {
+    margin-right: 25px;
+}
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.first {
+    background-image: url(https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_640.jpg);
+    
+}
+section {
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center; 
+}
+.foto img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+}
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.description {
+    width: 450px;
+    background-color: rgba(128, 128, 128, 0.548);
+    padding: 10px;
+    color: white;
+}
+.second {
+    background-image: url(https://cdn.stocksnap.io/img-thumbs/280h/dog-animal_DOTORLBDD7.jpg);    
+}
+main section:nth-child(even) .content{
+    flex-direction: row-reverse;
+}
+.third {
+    background-image: url(https://owl-online.org/wp-content/uploads/2020/09/pexels-pixabay-47359.jpg);    
+}
+.fourth {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/2010-kodiak-bear-1.jpg/1200px-2010-kodiak-bear-1.jpg);    
+}
+.fivth {
+    background-image: url(https://cdn.britannica.com/02/152302-050-1A984FCB/African-savanna-elephant.jpg);    
+}
+.sixth {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/38/Flamingos_Laguna_Colorada.jpg);    
+}
+.seventh {
+    background-image: url(https://www.nature.scot/sites/default/files/styles/hero_banner_half_width/public/2017-07/Otter-01v2.jpg?h=0006430b&itok=WcsIZM11);    
+}
+.eight {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_tiger_female.jpg/1200px-Walking_tiger_female.jpg);    
+}
+/* fixed position */
+header {
+    position: fixed;
+    width: 100%;
+}
