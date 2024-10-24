@@ -1,22 +1,42 @@
 body {
     font-family: "Poppins", sans-serif;
+    background-color: grey;
 }
 .main{
-    width: 80%;
-    margin: 45px auto;
+    width: 1125px;
+    margin: 100px auto; 
 }
 .photoGallery {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
 
 }
-.photo {
-    width: 20%;
-
-}
+ .photo {
+    background-color: white;
+} 
 .photo img {
-    width: 100%;
+    width: 270px;
     height: 170px;
     object-fit: cover;
+}
+.description {
+    margin-left: 10px;
+}
+.catNav {
+    
+    /* display: inline-block; */
+}
+.catNav a {
+    text-decoration: none;
+    margin-right: 15px;
+    background-color: white;
+    padding: 10px 5px;
+}
+.catNav .active {
+    background-color: darkgray;
+    color: white;
 }
