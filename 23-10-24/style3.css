@@ -26,10 +26,6 @@ body {
 .description {
     margin-left: 10px;
 }
-.catNav {
-    
-    /* display: inline-block; */
-}
 .catNav a {
     text-decoration: none;
     margin-right: 15px;
