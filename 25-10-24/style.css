@@ -1,0 +1,55 @@
+body {
+    font-family: "Rubik", serif;
+    background-color: pink;
+    
+}
+.main {
+    width: 60%;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.puse {
+    width: 50%;
+    height: 80%;
+}
+.left {
+    background-color: lightskyblue;
+    text-align: center;
+    color: white;
+    
+}
+.right {
+    background-color: white;
+    text-align: center;
+}
+.form {
+    margin: 10% auto;
+    width: 70%;
+}
+input, textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(197, 193, 193);
+    border: none;
+    height: 30px;
+}
+textarea {
+    height: 60px;
+}
+.req {
+    display: block;
+    padding-bottom: 5px;
+    text-align: left;
+}
+.description {
+    width: 80%;
+    margin: 25% auto;
+}
+button {
+    background-color: lightskyblue;
+    border: none;
+    padding: 10px 20px;
+}
