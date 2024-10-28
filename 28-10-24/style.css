@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+}
+.main {
+    width: 800px;
+    margin: 40px auto;
+    height: 500px;
+    position: relative;
+    
+}
+.foto {
+    width: 50%;
+}
+img {
+    width: 100%;
+}
+.description {
+    background-color: white;
+    width: 60%;
+    padding: 60px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+.mediaLinks {
+    background-color: #47ea4e;
+    display: inline-block;
+    padding: 15px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+i {
+    color: white;
+    padding: 0 5px;
+}
