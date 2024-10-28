@@ -2,3 +2,33 @@ body {
     font-family: "Ubuntu", sans-serif;
     background-color: #2196f3;
 }
+.main {
+    width: 400px;
+    margin: 60px auto;
+    background-color: whitesmoke;
+}
+label { 
+    display: block;
+    margin-bottom: 5px;
+}
+.double {
+    display: flex;
+    gap: 10px;
+    /* justify-content: center; */
+}
+input {
+    height: 30px;
+    width: 100%;
+}
+.form div {
+    width: 350px;
+    margin: 0 auto;
+}
+.holder input {
+    text-align: center;
+    background-image: url(assets/xbox.svg);
+    background-repeat: no-repeat;
+    /* background-position-x: left; */
+    background-position: left center;
+}
+
