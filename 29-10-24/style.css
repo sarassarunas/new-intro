@@ -1,0 +1,101 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+h1,h2,p {
+    margin: 0;
+    /* display: inline-block; */
+}
+.main {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 100%;
+}
+.left {
+    background-image: url(./images/bg.svg);
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left a {
+    color: white;
+    background-color: #0575E6;
+    line-height: 21px;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 8px 30px;
+    margin-top: 23px;
+}
+.left h1 {
+    font-size: 40px;
+}
+.left p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 23px;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.right h2 {
+    font-size: 26px;
+}
+.right p {
+    font-size: 18px;
+}
+.mail,.pass {
+    border: 1px solid #EEEEEE;
+    border-radius: 30px;
+    margin-bottom: 16px;
+}
+input {
+    margin: 18px 26px 18px 58px;
+    border: none;
+}
+.mail {
+    background-image: url(./images/mail.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 26px;
+}
+.pass {
+    background-image: url(./images/pass.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 30px;
+}
+.right button {
+    background-color: #0575E6;
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    padding: 18px 0;
+    margin-bottom: 17px;
+}
+input, button {
+    font-family: "Poppins", sans-serif;
+}
+form {
+    margin-top: 40px;
+}
+.right a {
+    color: #333333;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+}
