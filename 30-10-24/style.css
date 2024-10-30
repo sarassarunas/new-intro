@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Inter", sans-serif;
+}
+body {
+    margin: 29px 26px 32px 26px;
+}
+label {
+    display: block;
+}
+/* .remember label {
+    display: inline-block;
+} */
+.remember {
+    display: flex;
+}
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line {
+    /* width: 146px; */
+    width: 100%;
+    height: 1px;
+    background-color: #A0AEC0;
+}
+.seperator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+
+/* mobile - reikia aprasyt @media su max*/ 
+
+/* .mobileCreateNow {
+    display: block;
+} */
+.header p {
+    display: none;
+}
+
+.right {
+    display: none;
+}
+.visibility {
+    display: none;
+}
+.logo img {
+    height: 28px;
+}
+.loginForm {
+    width: 100%;
+}
+.email input,.pass input {
+    width: 100%;
+}
+.email {
+    margin-bottom: 38px;
+}
+.pass {
+    margin-bottom: 23px;
+}
+button {
+    width: 100%;
+}
+.header h2 {
+    font-size: 36px;
+}
+.email label,.pass label {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    padding-bottom: 18px;
+}
+.remember label {
+    font-size: 14px;
+    line-height: 39px;
+}
+.remember input {
+    line-height: 39px;
+}
+.forgotPass {
+    font-size: 14px;
+    line-height: 150%;
+}
