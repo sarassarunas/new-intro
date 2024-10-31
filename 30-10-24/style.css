@@ -258,9 +258,150 @@ button {
     }
     main {
         display: flex;
+        width: 100%;
+        
     }
     .left {
         width: 48%;
+        margin: 0;
     }
+    .right {
+        width: 52%;
+        margin: 0;
+        background-image: url(./assets/bg-svg.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .left .container {
+        margin: 65px 50px 113px 42px;
+    }
+    .pass, .email {
+        width: 100%;
+    }
+    .support {
+        color: #F7FAFC;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin: 57px 0 153px;
+    }
+    .imgInfo {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    .support h4 {
+        margin: 0;
+    }
+    .description {
+        width: 57%;
+        margin: 0 18px 0 44px;
+        padding: 45px 0 33px;
+    }
+    .img {
+        width: 43%;
+    }
+    .img img {
+        width: 100%;
+    }
+    .description h3 {
+        font-size: 34px;
+        color: #1C4532;
+        letter-spacing: -2%;
+        line-height: 37px;
+        margin: 0;
+    }
+    .imgInfoWrapper {
+        position: relative;
+        width: 68.5%;
+        margin: 0 auto;
+    }
+    .extraEarnings {
+        position: absolute;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        right: 0;
+        bottom: -50px;
+        width: 50%;
+        padding: 20px 0 26px;
+    }
+    .chartIcon {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 17px;
+    }
+    .earnings span {
+        display: block;
+    }
+    .earn {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #1C4532;
+    }
+    .cash {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 32px;
+        color: #1C4532;
+    }
+    /* .earnings {
+        padding: 20px 96px 26px 18px;
+    } */
+    .description p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        color: #718096;
+
+    }
+    .description button {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        border-radius: 70px;
+        background-color: #1C4532;
+        color: #F7FAFC;
+        padding: 9px 47px;
+        width: auto;
+        border: none;
+    }
+    .supportDescr {
+        width: 66.5%;
+        margin: 120px auto 0;
+        text-align: center;
+    }
+    .supportDescr h2 {
+        color: #F7FAFC;
+        font-size: 40px;
+        line-height: 100%;
+        font-weight: 600;
+        margin: 0;
+    }
+    .supportDescr p {
+        color: #CFD9E0;
+        font-size: 20px;
+        line-height: 138.5%;
+        font-weight: 400;
+        margin-top: 36px;
+        margin-bottom: 0px;
+    }
+    .pagination {
+        margin-top: 86px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+    
+
 
 }
