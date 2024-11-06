@@ -36,9 +36,7 @@ button {
     width: 100%;
 }
 /* mobile */
-body {
-    /* padding: 40px 24px; */
-}
+
 nav.mainNav, .contactUs {
     display: none;
 }
