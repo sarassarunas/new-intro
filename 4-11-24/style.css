@@ -27,14 +27,22 @@ button {
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
 }
+.container {
+    max-width: 1248px;
+    padding: 40px 24px;
+    margin: 0 auto;
+}
+.col {
+    width: 100%;
+}
 /* mobile */
 body {
-    padding: 40px 24px;
+    /* padding: 40px 24px; */
 }
 nav.mainNav, .contactUs {
     display: none;
 }
-header {
+header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,6 +113,9 @@ section h2 {
 .fourth .portfolioItem.active img {
     width: 100%;    
 }
+/* .fourth .portfolioWrapper {
+    margin: 0 -24px;
+} */
 .fourth .portfolioWrapper {
     margin: 0 -24px;
 }
@@ -131,4 +142,77 @@ footer {
 footer img {
     width: 115px;
 }
+footer li {
+    padding: 20px 0;
+}
+footer .copy {
+    padding-top: 20px;
+}
 
+/* desktop */
+@media screen and (min-width:1024px) {
+    nav.mainNav, .contactUs {
+        display: block;
+    }
+    header .mobileNav {
+        display: none;
+    }
+    header .mainNav ul{
+        display: flex;
+        gap: 40px;
+    }
+    .top .container {
+        display: flex;
+        align-items: center;
+    }
+    .top .imgWrap img {
+        text-align: right;
+        /* width: 100%; */
+    }
+    .textWrap h1 {
+        font-size: 80px;
+        line-height: 84px;
+    }
+    .textWrap p {
+        font-size: 21px;
+        line-height: 39px;
+    }
+    .second .headingText {
+        display: flex;
+        gap: 100px;
+        align-items: flex-start;
+        padding-bottom: 60px;
+    }
+    section h2 {
+        font-size: 60px;
+        line-height: 70px;
+        margin: 0;
+    }
+    section.second .pText p {
+        font-size: 21px;
+        line-height: 39px;
+        margin: 0;
+        
+    }
+    .second .videoWrapper .playButton {
+        width: 124px;
+    }
+    section.third h2 {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+    }
+    section.third .servicesIcons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+    section.third .servicesIcons .service {
+        width: 30%;
+    }
+
+
+
+
+}
