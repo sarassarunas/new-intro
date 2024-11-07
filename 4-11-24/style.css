@@ -205,6 +205,7 @@ footer .copy {
         display: flex;
         flex-wrap: wrap;
         gap: 50px;
+        justify-content: center;
     }
     section.third .servicesIcons .service {
         width: 29%;
