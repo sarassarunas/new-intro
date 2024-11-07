@@ -207,10 +207,78 @@ footer .copy {
         gap: 50px;
     }
     section.third .servicesIcons .service {
-        width: 30%;
+        width: 29%;
     }
-
-
-
-
+    .fourth .pagination .desk {
+        display: block;
+    }
+    .fourth .pagination .mobile {
+        display: none;
+    }
+    .fourth .portfolioItem {
+        display: block;
+    }
+    .fourth .portfolioWrapper {
+        margin: 0 0;
+        display: flex;
+        gap: 24px;
+        height: 467px;
+        padding-bottom: 90px;
+    }
+    .fourth .portfolioItem img {
+        width: 100%;
+    }
+    .fourth .container h2 {
+        padding-bottom: 90px;
+    }
+    .fourth .portfolioItem:nth-child(2) {
+        align-self: center;
+    }
+    .fourth .portfolioItem:nth-child(3) {
+        align-self: flex-end;
+    }
+    .fourth .pagination .desk {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+    .fourth .pagination a {
+        background-color: #121213;
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 50%;
+    }
+    .fourth .pagination a:hover {
+        width: 16px;
+        border-radius: 10px;
+        background-color: var(--button-color);
+    }
+    .fivth .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* .fivth .container button {
+        
+    } */
+    .fivth .container h2 {
+        max-width: 65%;
+    }
+    section.fivth {
+        background-color: #1E1E2050;
+    }
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .footerNav ul{
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+    footer .logo {
+        display: flex;
+        align-items: center;
+    }
 }
