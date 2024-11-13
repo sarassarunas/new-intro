@@ -125,3 +125,65 @@ if (nznKeturi === 0) {
 console.log(`Nuliu: ${kiekNuliu}, vienetu: ${kiekVienetu}, dvejetu: ${kiekDvejetu}`);
 
 console.log (`---------9--------`);
+
+let rndPirmas = random(-10,10);
+let rndAntras = random(-10,10);
+let rndTrecias = random(-10,10);
+console.log(rndPirmas,rndAntras,rndTrecias);
+let isvestisVienas = 0;
+let isvestisDu = 0;
+let isvestisTris = 0;
+
+if(rndPirmas < 0){
+    isvestisVienas = `[`+rndPirmas+`]`;
+} else if (rndPirmas===0) {
+    isvestisVienas = `(`+rndPirmas+`)`;
+} else {
+    isvestisVienas = `{`+rndPirmas+`}`;
+}
+
+if(rndAntras < 0){
+    isvestisDu = `[`+rndAntras+`]`;
+} else if (rndAntras===0) {
+    isvestisDu = `(`+rndAntras+`)`;
+} else {
+    isvestisDu = `{`+rndAntras+`}`;
+}
+
+if(rndTrecias < 0){
+    isvestisTris = `[`+rndTrecias+`]`;
+} else if (rndAntras===0) {
+    isvestisTris = `(`+rndTrecias+`)`;
+} else {
+    isvestisTris = `{`+rndTrecias+`}`;
+}
+
+console.log(isvestisVienas, isvestisDu, isvestisTris);
+
+console.log (`---------10--------`);
+
+let perkamasKiekis = random(5,3000);
+let kainaVnt = 1;
+let kainaGalutine = 0;
+
+if (perkamasKiekis>1000) {
+    kainaGalutine = perkamasKiekis*kainaVnt*0.97;
+} else if (perkamasKiekis>2000) {
+    kainaGalutine = perkamasKiekis*kainaVnt*0.96;
+} else {
+    kainaGalutine = perkamasKiekis*kainaVnt;
+}
+
+console.log(`Pilna kaina:${kainaGalutine}Eur, perkamas kiekis: ${perkamasKiekis} zvakiu`);
+
+console.log (`---------11--------`);
+
+rndPirmas = random(0,100);
+rndAntras = random(0,100);
+rndTrecias = random(0,100);
+
+console.log(rndPirmas,rndAntras,rndTrecias);
+
+console.log(`Vidurkis: ${((rndPirmas+rndAntras+rndTrecias)/3).toFixed(0)}`);
+
+// if (rndPirmas>)
