@@ -101,7 +101,8 @@ let krastinesIlgis = 51;
 //     // console.log(piesinys);
     
 // } 
-  
+console.log(`-----------9---------`);
+document.write(`<h1>-----------8/9---------</h1>`);  
 for (let eilute =1;eilute<=krastinesIlgis;eilute++) {
     for(let stulpelis=1;stulpelis<=krastinesIlgis;stulpelis++){
         if (stulpelis===eilute || stulpelis ===krastinesIlgis-eilute+1){
@@ -116,8 +117,8 @@ for (let eilute =1;eilute<=krastinesIlgis;eilute++) {
 
 // document.write(piesinys+eilute);
 
-console.log(`-----------9---------`);
-document.write(`<h1>-----------9---------</h1>`);
+console.log(`-----------9/fail---------`);
+
 // dont know
 // piesinys = ``;
 // krastinesIlgis = 25;
@@ -139,8 +140,110 @@ console.log(`-----------10---------`);
 
 let monetosHerbas = 0;
 let monetosSkaicius = 1;
-let metimas = 0;
+let metam = true;
+let rezultatas=``;
+
+while (metam) {
+    let metimas = random(0,1);
+    if(metimas === 0) {
+
+        rezultatas +=metimas;
+        
+        metam = false;
+    } else {
+        rezultatas+=metimas;
+    }
+}
+console.log(`-----------a---------`);
+console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
+
+rezultatas=``;
+let counter = 0;
+
+while (counter<3) {
+    let metimas = random(0,1);
+    rezultatas +=metimas;
+    if(metimas === 0) {
+        counter++;
+        
+
+    } else {
+        rezultatas+=metimas;
+        
+    }
+}
+console.log(`-----------b---------`);
+console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
+
+rezultatas=``;
+
+while (rezultatas.match(`000`)===null) {
+    let metimas = random(0,1);
+    rezultatas +=metimas;
+    
+}
+console.log(`-----------C---------`);
+console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
+
+console.log(`-----------11---------`);
+
+let pirmoTaskai = 0;
+let antroTaskai = 0;
+rezultatas = ``;
+counter = 0;
+
+while (pirmoTaskai<=222 && antroTaskai<=222) {
+    let kazioTaskai = random(5,25);
+    let petroTaskai = random(10,20);
+    pirmoTaskai+=petroTaskai;
+    antroTaskai+=kazioTaskai;
+    counter++;
+    // console.log(pirmoTaskai,antroTaskai);
+    if (kazioTaskai>petroTaskai) {
+        // console.log(`Partija laimejo: Kazys, surinko ${kazioTaskai}`);
+        rezultatas+=`${counter} Partija laimejo: Kazys, surinko ${kazioTaskai}. `;
+    } else if (kazioTaskai<petroTaskai) {
+        // console.log(`Partija laimejo: Petras, surinko ${petroTaskai}`);
+        rezultatas+=`${counter} Partija laimejo: Petras, surinko ${petroTaskai}. `;
+    } else {
+        // console.log(`Partija baigesi lygiosiomis: surinko po ${petroTaskai}`);
+        rezultatas+=`${counter} Partija baigesi lygiosiomis: surinko po ${petroTaskai}. `;
+    }
+    // console.log(rezultatas);
+}
+console.log(rezultatas);
+if (pirmoTaskai>antroTaskai) {
+    console.log(`Zaidima laimejo: Petras. Surinko ${pirmoTaskai}. Viso partiju: ${counter}`);
+} else if (pirmoTaskai<antroTaskai) {
+    console.log(`Zaidima laimejo: Kazys. Surinko ${antroTaskai}. Viso partiju: ${counter}`);
+} else {
+    console.log(`Lygiosios?. Viso partiju: ${counter}`)
+}
+
+console.log(`-----------12---------`);
+
+let viniesIlgis = 85;
+let sulindo = 0;
+let viniuKiekis = 5;
+let kiekIkalta = 0;
+
+// let silpnasSmugis = random (0.05, 0.2);
+// let stiprusSmugis = random (0.2,0.3);
+counter = 0;
+
+console.log(`-----------a---------`);
+
+for (let ikalta=0;ikalta<=viniuKiekis;ikalta++) {
+    while(sulindo<=viniesIlgis) {
+        let silpnasSmugis = random (5, 20);
+        sulindo+=silpnasSmugis;
+        counter++;
+        console.log(sulindo);
+    }
+    kiekIkalta++;
+    console.log(kiekIkalta);
+}    
+console.log(counter);
 
 
-// while ()
 
