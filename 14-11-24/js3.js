@@ -88,24 +88,52 @@ console.log(atsakymas.slice(0, -2));
 
 console.log(`-----------8---------`);
 
-let piesinys = ``;
-let krastinesIlgis = 25;
-let eilute = ``;
+// let piesinys = ``;
+let krastinesIlgis = 51;
+// let eilute = ``;
 
-for (i=1;i<=krastinesIlgis;i++) {
-    piesinys+=`*`;
-    
-}
+// for (i=1;i<=krastinesIlgis;i++) {
+//     piesinys+=`*`;   
+// }
+// // console.log(piesinys);
 // for(i=1;i<=krastinesIlgis;i++) {
-//     eilute=piesinys+`<br>`;
+//     document.write(piesinys+`<br>`);
+//     // console.log(piesinys);
+    
 // } 
   
+for (let eilute =1;eilute<=krastinesIlgis;eilute++) {
+    for(let stulpelis=1;stulpelis<=krastinesIlgis;stulpelis++){
+        if (stulpelis===eilute || stulpelis ===krastinesIlgis-eilute+1){
+            document.write(`5`);
+        }else {document.write(`*`);}
+        
+    }
 
-document.write(piesinys+eilute);
+    document.write(`<br>`);
+
+}
+
+// document.write(piesinys+eilute);
 
 console.log(`-----------9---------`);
-
+document.write(`<h1>-----------9---------</h1>`);
 // dont know
+// piesinys = ``;
+// krastinesIlgis = 25;
+// // eilute = ``;
+
+// for (i=1;i<=krastinesIlgis;i++) {
+//     piesinys+=`*`;   
+// }
+// // console.log(piesinys);
+// for(i=1;i<=krastinesIlgis;i++) {
+//     eilute = piesinys+`<br>`;
+//     document.write(eilute.replace("*","5"));
+//     console.log(eilute);
+    
+// } 
+// (/#|_/g, '')
 
 console.log(`-----------10---------`);
 
