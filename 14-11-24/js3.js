@@ -235,7 +235,7 @@ console.log(`-----------a---------`);
 
 for (let ikalta=0;ikalta<viniuKiekis;ikalta++) {
         sulindo = 0;
-    while(sulindo<=viniesIlgis) {
+    while(sulindo<viniesIlgis) {
         let silpnasSmugis = random (5, 20);
         sulindo+=silpnasSmugis;
         counter++;
@@ -246,5 +246,27 @@ for (let ikalta=0;ikalta<viniuKiekis;ikalta++) {
 }    
 console.log(counter);
 
+console.log(`-----------b---------`);
 
+kiekIkalta = 0;
+
+for (let ikalta=0;ikalta<viniuKiekis;ikalta++) {
+        sulindo = 0;
+
+    while(sulindo<viniesIlgis) {
+        arPataike = random(0,1);
+        console.log(arPataike);
+        if (arPataike===1) {
+        let stiprusSmugis = random (20, 30);
+        sulindo+=stiprusSmugis;
+        counter++;
+        console.log(sulindo);
+        } else {
+            counter++;
+        }
+    }
+    kiekIkalta++;
+    console.log(kiekIkalta);
+}    
+console.log(counter);
 
