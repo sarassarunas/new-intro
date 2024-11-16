@@ -233,7 +233,8 @@ counter = 0;
 
 console.log(`-----------a---------`);
 
-for (let ikalta=0;ikalta<=viniuKiekis;ikalta++) {
+for (let ikalta=0;ikalta<viniuKiekis;ikalta++) {
+        sulindo = 0;
     while(sulindo<=viniesIlgis) {
         let silpnasSmugis = random (5, 20);
         sulindo+=silpnasSmugis;
