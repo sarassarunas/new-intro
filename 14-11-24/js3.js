@@ -157,6 +157,7 @@ while (metam) {
 console.log(`-----------a---------`);
 console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
 
+console.log(`-----------b---------`);
 rezultatas=``;
 let counter = 0;
 
@@ -172,8 +173,10 @@ while (counter<3) {
         
     }
 }
-console.log(`-----------b---------`);
+
 console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
+
+console.log(`-----------C---------`);
 
 rezultatas=``;
 
@@ -182,7 +185,7 @@ while (rezultatas.match(`000`)===null) {
     rezultatas +=metimas;
     
 }
-console.log(`-----------C---------`);
+
 console.log(rezultatas.replaceAll(0,`H`).replaceAll(1,`S`));
 
 console.log(`-----------11---------`);
