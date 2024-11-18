@@ -310,3 +310,35 @@ for (let i = 0; i <= stringas.length; i++) {
 }
 console.log("Didžiausias skaičius: " + didziausias);
 console.log("Mažiausias skaičius: " + maziausias);
+
+console.log(`--------7 vel-------`);
+
+let krastinesAukstis = 21;
+let centras = Math.round(krastinesAukstis/2); 
+console.log(centras);
+
+for(let i=0;i<krastinesAukstis;i++){
+    for(let y=0;y<=krastinesAukstis;y++){
+        if(i<centras){
+            if (y===centras-i || y===centras+i) {
+                
+                document.write(`<span style="color:rgb(${random(0,255)} ${random(0,255)} ${random(0,255)})">*</span>`);
+            } else {
+                document.write(`&nbsp`);
+            }
+            
+        
+        
+        } else if (i>centras){
+            if(y===i-centras || y===i+centras) {
+                document.write(`<span style="color:rgb(${random(0,255)} ${random(0,255)} ${random(0,255)})">*</span>`);
+            } else {
+                document.write(`&nbsp`);
+            }
+            
+        } else {
+            document.write(`<span style="color:rgb(${random(0,255)} ${random(0,255)} ${random(0,255)})">*</span>`);
+        }
+    }
+    document.write(`<br>`);
+    }        
