@@ -45,6 +45,13 @@ tbody tr {
 }
 .rating {
     padding-bottom: 25px;
+    position: relative;
+    width: max-content;
+}
+.rating .active {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .aprasymas {
     max-width: 500px;

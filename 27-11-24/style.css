@@ -1,0 +1,21 @@
+.container {
+    background-color: #9b8a7c;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #c77838;
+}

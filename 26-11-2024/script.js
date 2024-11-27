@@ -11,7 +11,21 @@ for(const produktas of produktai.products) {
                     <a href="">${produktas.title}</a>
                 </div>
                 <div class="rating">
-                    ${produktas.rating}
+                    <div class="active" style="width:${produktas.rating*20}%">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="inActive">
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>     
+                    
                 </div>
                 <div class="aprasymas">
                     ${produktas.description}
