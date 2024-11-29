@@ -38,15 +38,19 @@ document.querySelector(`.setColor`).addEventListener(`click`, setSpalva);
 
 document.querySelector(`.ridenti`).addEventListener(`click`, naujasKamuoliukas);
 
-
+const laimingasSk = random(0,100);
+let paskutinisKamuoliukas = -1;
 
 function naujasKamuoliukas() {
     //let rezultatas = ``;
-    console.log(`veikia kamuoliukas`);
+    console.log(laimingasSk);
     let kamuoliukas = random(0,100);
     //rezultatas+=`<span>${kamuoliukas}</span>`;
+    
     let color=``;
     let txtColor=``;
+    let rezultatas=``;
+    
     if(kamuoliukas<20) {
         color=`black`;
         txtColor=`white`;
@@ -59,7 +63,21 @@ function naujasKamuoliukas() {
     } else if (kamuoliukas>=60 && kamuoliukas<80){
         color=`blue`;
         txtColor=`white`;
-    } else {color=`green`; txtColor=`black`;}
-    let rezultatas = `<span style="background-color:${color};color:${txtColor};">${kamuoliukas}</span>`;
-    document.querySelector(`.rezultatas`).innerHTML+=rezultatas;
+    } else {
+        color=`green`; txtColor=`black`;
+    }
+
+    if(kamuoliukas!==laimingasSk) {
+        
+        rezultatas = `<span style="background-color:${color};color:${txtColor};">${kamuoliukas}</span>`;
+
+        document.querySelector(`.rezultatas`).innerHTML+=rezultatas;
+    } else {
+        rezultatas = `<span style="background-color:${color};color:${txtColor};">${kamuoliukas}</span>`;
+
+        document.querySelector(`.rezultatas`).innerHTML+=rezultatas+`<div>Tai buvo laimingasis kamuoliukas!</div>`;
+        document.querySelector(`.ridenti`).removeEventListener(`click`, naujasKamuoliukas);
+    }
+    
+    
 }
