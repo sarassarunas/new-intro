@@ -17,7 +17,7 @@ const produktai = {
         category: 'beauty',
         description: "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",     
         discountPercentage: 5.5,
-        id: 2,
+        id: 95,
         price: 19.99,
         rating: 3.28,
         stock: 44,
