@@ -64,7 +64,7 @@ function addToCart(e) {
     toBuy.push({id: id, qty: qty});
     console.log(toBuy);
     display();
-    console.log(toBuy[0][`id`]);
+    // console.log(toBuy[0][`id`]);
 }
 
 let renderPlace = document.querySelector(`.shopingCart`);
@@ -72,8 +72,10 @@ console.log(renderPlace);
 
 function display() {
     renderPlace.innerHTML=`haloo`;
-    for(let xzn in toBuy) {
-    let index = produktai.products.findIndex(x => x.id ===toBuy[xzn][`id`]);
+    for(let item in toBuy) {
+    let index = produktai.products.findIndex(x => x.id ===toBuy[item][`id`]);
     console.log(index);
     }
+    
+
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="kokiaVeisle">
+        <input type="text" class="veisle">
+        <div class="mygtukas" onclick="paieska(event)">Ieskoti</div>
+    </div>
+    <div class="breedSel">
+        <select name="" id="" onchange="showImg(event)">
+            <option value="">1</option>
+            <option value="">2</option>
+        </select>
+    </div>
+    <div class="paveikslelis"></div>
+    <style>
+        .paveikslelis {
+            width: 500px;
+            height: 500px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        let input = document.querySelector(`.kokiaVeisle input`);
+        let breed = ``;
+        
+        function paieska(e) {
+            
+            // console.log(input.value.split(` `));
+            
+             if (input.value.includes(` `)) {
+                let split = input.value.split(` `);
+                breed = `${split[0]}/${split[1]}`.toLowerCase();
+             } else {
+                breed = input.value.toLowerCase();
+             }
+        
+        console.log(breed);
+        
+        fetch('https://dog.ceo/api/breed/'+breed+'/images/random').then(resp => resp.json()).then(resp => {
+            document.querySelector('.paveikslelis').innerHTML = `<img src="${resp.message}" />`;
+        }); 
+        }
+
+        // let selLoc = document.querySelector(`select`);
+
+        // let list = {affenpinscher:[],african:[],airedale:[],akita:[],appenzeller:[],australian:['kelpie', 'shepherd'],bakharwal:['indian'],basenji:[],beagle:[],bluetick:[],borzoi:[]};
+        
+        // console.log(list.australian[0]);
+
+        // for(opt in list) {
+        //     if(opt[0]!=='')
+        //     console.log(opt);
+        // }
+
+
+
+        // document.querySelector(`select`).innerHTML=list.map((veisle, idx)=>`<option>${veisle}</option>`);
+
+        fetch(`https://dog.ceo/api/breeds/list/all`).then(resp =>resp.json()).then(resp =>{
+            // console.log(resp.message);
+            let breeds = resp.message;
+            let selector = [];
+            for (const [breed, option] of Object.entries(breeds)) {
+                if (option.length>0) {
+                    option.forEach(element => selector.push(`${breed}/${element}`));
+                } else {
+                    selector.push(breed);
+                }
+            }
+            // console.log(selector);
+            document.querySelector(`select`).innerHTML=selector.map((veisle)=>`<option>${veisle}</option>`);
+            // document.querySelector(`select`).innerHTML=resp.message.map((veisle, idx)=>`<option>${veisle}</option>`);
+            // console.log(list);
+
+            // console.log(resp.message);
+        });
+
+        function showImg(e) {
+            breed = e.target.value;
+            console.log(breed);
+            fetch('https://dog.ceo/api/breed/'+breed+'/images/random').then(resp => resp.json()).then(resp => {
+            document.querySelector('.paveikslelis').innerHTML = `<img src="${resp.message}" />`;
+        }); 
+        }
+
+    </script>
+</body>
+</html>
