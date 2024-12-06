@@ -60,22 +60,55 @@ const toBuy = [];
 function addToCart(e) {
     let id=+e.target.parentElement.parentElement.parentElement.dataset.id;
     let qty = 1;
+    console.log(toBuy.filter(el=>el.id===id));
+    if(toBuy.filter(el=>el.id===id).length>0){
+        for(let product of toBuy) {
+            if(product.id===id){
+                product.qty++;
+            }
+        }
+    } else {
+        toBuy.push({id, qty});
+    };
     
-    toBuy.push({id: id, qty: qty});
+    // if(krepselioProduktai.filter(value => value.id === id).length > 0) {
+    //     for(const produktas of krepselioProduktai) {
+    //         if(produktas.id === id) {
+    //             produktas.qty++;
+    //         }
+    //     }
+    // } else {
+    //     krepselioProduktai.push({id, photo, title, price, qty: 1});
+    // }
+
+    // toBuy.push({id, qty});
     console.log(toBuy);
     display();
     // console.log(toBuy[0][`id`]);
+    toCartPage();
 }
 
-let renderPlace = document.querySelector(`.shopingCart`);
-console.log(renderPlace);
+let renderPlaceItems = document.querySelector(`.shopingCart .krepselis`);
+let renderPlaceSum = document.querySelector(`.shopingCart .cartSum`);
+// console.log(renderPlace);
 
 function display() {
-    renderPlace.innerHTML=`haloo`;
+    renderPlaceItems.innerHTML=``;
     for(let item in toBuy) {
     let index = produktai.products.findIndex(x => x.id ===toBuy[item][`id`]);
     console.log(index);
+    renderPlaceItems.innerHTML+=
+    `
+    <div class="imgContainer">
+       <img src="${produktai.products[index].thumbnail}">
+    </div>
+    <div>
+        <input type="number" value="${toBuy[item].qty}">
+    </div>
+    <div class="cartItemPrice">
+        <span class="itemPrice">Item price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)}</span>
+        <span class="allItemPrice">Total price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)*toBuy[item].qty}</span.
+    </div>
+    `
     }
-    
-
 }
