@@ -99,16 +99,22 @@ function display() {
     console.log(index);
     renderPlaceItems.innerHTML+=
     `
-    <div class="imgContainer">
-       <img src="${produktai.products[index].thumbnail}">
-    </div>
-    <div>
-        <input type="number" value="${toBuy[item].qty}">
-    </div>
-    <div class="cartItemPrice">
-        <span class="itemPrice">Item price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)}</span>
-        <span class="allItemPrice">Total price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)*toBuy[item].qty}</span.
-    </div>
+    <div class=itemContainer>
+        <div class="imgContainer">
+        <img src="${produktai.products[index].thumbnail}">
+        </div>
+        <div>
+            <input type="number" value="${toBuy[item].qty}" onchange="changeQty(event)">
+        </div>
+        <div class="cartItemPrice">
+            <span class="itemPrice">Item price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)}</span>
+            <span class="allItemPrice">Total price:${(produktai.products[index].price*((100-produktai.products[index].discountPercentage)/100)).toFixed(2)*toBuy[item].qty}</span.
+        </div>
+    </div>    
     `
     }
+}
+
+function changeQty(e) {
+    console.log(`veikiaQTY`);
 }
