@@ -13,6 +13,9 @@
                     <input type="text">
                     <button onclick="search(event)">Ieskoti</button>
                 </form>
+                <div class="goBack">
+                    <a href="#" onclick="showAllList(event)">Grizti i sarasa</a>
+                </div>
             </div>
         </div>
     </section>
@@ -25,7 +28,27 @@
     </section>
     <section class="singleMeal" style="display: none;">
         <div class="container">
-            
+            <div class="singleImg">
+                
+            </div>
+            <div class="description">
+                <div class="name"></div>
+                <div class="howToMake"></div>
+                <div class="category"></div>
+                <div class="origin"></div>
+                <div class="video"></div>
+                <div class="recept">
+                    <span>You will need:</span>
+                    <div class="ingridients"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categoryPage" style="display: none;">
+        <div class="container">
+            <div class="meals">
+
+            </div>
         </div>
     </section>
 
@@ -37,7 +60,10 @@
 
 
 
-        let renderLocAll = document.querySelector(`.meals`);
+        let renderLocAll = document.querySelector(`section.allMeals .meals`);
+        let allMeals = document.querySelector(`section.allMeals`);
+        let singleMeal = document.querySelector(`section.singleMeal`);
+        let categoryPage = document.querySelector(`section.categoryPage`);
 
         function search(e) {
             e.preventDefault();
@@ -50,8 +76,8 @@
                 for(let item of res.meals){
                     renderLocAll.innerHTML+=
                     `   
-                        <div class="itemList" data-id="${item.idMeal}" onclick="singleMealFull(event)">
-                            <div class="img"><img src="${item.strMealThumb}"></div>
+                        <div class="itemList">
+                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
                             <div class="name">${item.strMeal}</div>
                         </div>
                     `
@@ -59,15 +85,81 @@
             });
         }
         function singleMealFull(e) {
-            document.querySelector(`section.allMeals`).style.display=`none`;
-            document.querySelector(`section.singleMeal`).style.display=`block`;
-            let id = +e.target.parentElement.parentElement.dataset.id;
+            allMeals.style.display=`none`;
+            // categoryPage.style.display=`none`;
+            singleMeal.style.display=`block`;
+            let id = +e.target.dataset.id;
+            singleMeal.querySelector(`.singleImg`).innerHTML=``;
             console.log(e.target);
             console.log(id);
+            fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i="+id).then(res=>res.json()).then(res=>{
+                console.log(res.meals[0]);
+                singleMeal.querySelector(`.singleImg`).innerHTML=`<img src="${res.meals[0].strMealThumb}">`;
+                singleMeal.querySelector(`.description .name`).innerHTML=`<h2>${res.meals[0].strMeal}</h2>`;
+                singleMeal.querySelector(`.description .howToMake`).innerHTML=`<p>${res.meals[0].strInstructions}</p>`;
+                singleMeal.querySelector(`.description .category`).innerHTML=`<a href="#" onclick="showCategory(event)">${res.meals[0].strCategory}</a>`;
+                singleMeal.querySelector(`.description .origin`).innerHTML=`<a href="#" onclick="showArea(event)">${res.meals[0].strArea}</p>`;
+                singleMeal.querySelector(`.description .video`).innerHTML=`<a href="${res.meals[0].strYoutube}" target="_blank">Youtube video</a>`;
+                singleMeal.querySelector(`.description .ingridients`).innerHTML=``;
+                console.log(res.meals[0][`strIngredient1`]);
+                for(let i=0;i<=20;i++) {
+                    if(res.meals[0][`strIngredient${i}`]) {
+                        singleMeal.querySelector(`.description .ingridients`).innerHTML+=`<li>${res.meals[0][`strIngredient${i}`]} : ${res.meals[0][`strMeasure${i}`]}</li>`;
+                    }
+                }
+
+
+
+            })
+            // let index = produktai.products.findIndex(x => x.id ===toBuy[item][`id`]);
+            // console.log(index);
         }
-        function showAllList() {
-            document.querySelector(`section.allMeals`).style.display=`block`;
-            document.querySelector(`section.singleMeal`).style.display=`none`;
+        function showAllList(e) {
+            
+            allMeals.style.display=`block`;
+            singleMeal.style.display=`none`;
+        }
+
+        function showCategory(e) {
+            // categoryPage.style.display=`block`;
+            singleMeal.style.display=`none`;
+            allMeals.style.display=`block`;
+            renderLocAll.innerHTML=``;
+            let category = e.target.textContent;
+            console.log(category);
+            fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c="+category).then(res => res.json()).then(res=>{
+                console.log(res);
+                for(let item of res.meals){
+                    renderLocAll.innerHTML+=
+                    `   
+                        <div class="itemList">
+                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
+                            <div class="name">${item.strMeal}</div>
+                        </div>
+                    `
+                }
+            });
+
+        }
+
+        function showArea(e) {
+            singleMeal.style.display=`none`;
+            allMeals.style.display=`block`;
+            renderLocAll.innerHTML=``;
+            let category = e.target.textContent;
+            console.log(category);
+            fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a="+category).then(res => res.json()).then(res=>{
+                console.log(res);
+                for(let item of res.meals){
+                    renderLocAll.innerHTML+=
+                    `   
+                        <div class="itemList">
+                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
+                            <div class="name">${item.strMeal}</div>
+                        </div>
+                    `
+                }
+            });
         }
 
 
@@ -83,7 +175,7 @@
         .img{
             width: 300px;
         }
-        .meals {
+        section.allMeals .meals, section.categoryPage .meals {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -93,9 +185,32 @@
         }
         .name {
             text-align: center;
+            max-width: 300px;
         }
-        .itemList {
+        .itemList img {
             cursor: pointer;
+        }
+        .search {
+            display: flex;
+        }
+        .search a {
+            margin-left: 30px;
+        }
+        .singleImg {
+            width: 60%;
+        }
+        .singleImg img {
+            width: 100%;
+        }
+        section.singleMeal .container {
+            display: flex;
+        }
+        .description {
+            width: 40%;
+            padding-left: 20px;
+        }
+        .category, .origin, .video {
+            margin: 16px 0;
         }
     </style>
 </body>
