@@ -16,6 +16,9 @@
                 <div class="goBack">
                     <a href="#" onclick="showAllList(event)">Grizti i sarasa</a>
                 </div>
+                <div class="random">
+                    <a href="#" onclick="randomMeal()">Man sekasi</a>
+                </div>
             </div>
         </div>
     </section>
@@ -73,46 +76,32 @@
             
             fetch("https://www.themealdb.com/api/json/v1/1/search.php?s="+value).then(res => res.json()).then(res=>{
                 console.log(res);
-                for(let item of res.meals){
-                    renderLocAll.innerHTML+=
-                    `   
-                        <div class="itemList">
-                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
-                            <div class="name">${item.strMeal}</div>
-                        </div>
-                    `
-                }
+                renderMeals(res);
             });
         }
-        function singleMealFull(e) {
+        function singleMealFull(id) {
             allMeals.style.display=`none`;
-            // categoryPage.style.display=`none`;
             singleMeal.style.display=`block`;
-            let id = +e.target.dataset.id;
-            singleMeal.querySelector(`.singleImg`).innerHTML=``;
-            console.log(e.target);
-            console.log(id);
             fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i="+id).then(res=>res.json()).then(res=>{
                 console.log(res.meals[0]);
                 singleMeal.querySelector(`.singleImg`).innerHTML=`<img src="${res.meals[0].strMealThumb}">`;
                 singleMeal.querySelector(`.description .name`).innerHTML=`<h2>${res.meals[0].strMeal}</h2>`;
                 singleMeal.querySelector(`.description .howToMake`).innerHTML=`<p>${res.meals[0].strInstructions}</p>`;
-                singleMeal.querySelector(`.description .category`).innerHTML=`<a href="#" onclick="showCategory(event)">${res.meals[0].strCategory}</a>`;
-                singleMeal.querySelector(`.description .origin`).innerHTML=`<a href="#" onclick="showArea(event)">${res.meals[0].strArea}</p>`;
+                singleMeal.querySelector(`.description .category`).innerHTML=`<a href="#" onclick="showMeals('c','${res.meals[0].strCategory}')">${res.meals[0].strCategory}</a>`;
+                singleMeal.querySelector(`.description .origin`).innerHTML=`<a href="#" onclick="showMeals('a','${res.meals[0].strArea}')">${res.meals[0].strArea}</p>`;
                 singleMeal.querySelector(`.description .video`).innerHTML=`<a href="${res.meals[0].strYoutube}" target="_blank">Youtube video</a>`;
                 singleMeal.querySelector(`.description .ingridients`).innerHTML=``;
                 console.log(res.meals[0][`strIngredient1`]);
                 for(let i=0;i<=20;i++) {
                     if(res.meals[0][`strIngredient${i}`]) {
-                        singleMeal.querySelector(`.description .ingridients`).innerHTML+=`<li>${res.meals[0][`strIngredient${i}`]} : ${res.meals[0][`strMeasure${i}`]}</li>`;
+                        singleMeal.querySelector(`.description .ingridients`).innerHTML+=`<li><a href="#" onclick="showMeals('i','${res.meals[0][`strIngredient${i}`]}')">${res.meals[0][`strIngredient${i}`]}</a> : ${res.meals[0][`strMeasure${i}`]}</li>`;
                     }
                 }
 
 
 
-            })
-            // let index = produktai.products.findIndex(x => x.id ===toBuy[item][`id`]);
-            // console.log(index);
+            });
+        
         }
         function showAllList(e) {
             
@@ -120,47 +109,57 @@
             singleMeal.style.display=`none`;
         }
 
-        function showCategory(e) {
-            // categoryPage.style.display=`block`;
-            singleMeal.style.display=`none`;
-            allMeals.style.display=`block`;
-            renderLocAll.innerHTML=``;
-            let category = e.target.textContent;
-            console.log(category);
-            fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c="+category).then(res => res.json()).then(res=>{
-                console.log(res);
-                for(let item of res.meals){
+        function renderMeals(res) {
+            for(let item of res.meals){
                     renderLocAll.innerHTML+=
                     `   
                         <div class="itemList">
-                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
+                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(${item.idMeal})"></div>
                             <div class="name">${item.strMeal}</div>
                         </div>
                     `
                 }
-            });
-
         }
 
-        function showArea(e) {
+
+        function showMeals(type,value) {
             singleMeal.style.display=`none`;
             allMeals.style.display=`block`;
             renderLocAll.innerHTML=``;
-            let category = e.target.textContent;
-            console.log(category);
-            fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a="+category).then(res => res.json()).then(res=>{
+            fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?${type}=${value}`).then(res => res.json()).then(res=>{
                 console.log(res);
-                for(let item of res.meals){
-                    renderLocAll.innerHTML+=
-                    `   
-                        <div class="itemList">
-                            <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
-                            <div class="name">${item.strMeal}</div>
-                        </div>
-                    `
-                }
+                renderMeals(res);
             });
         }
+        function randomMeal() {
+            fetch(`https://www.themealdb.com/api/json/v1/1/random.php`).then(res=>res.json()).then(res=>{
+                console.log(res);
+                singleMealFull(res.meals[0].idMeal);
+
+            });
+        }
+
+        // function showByIngridient(e) {
+        //     // categoryPage.style.display=`block`;
+        //     singleMeal.style.display=`none`;
+        //     allMeals.style.display=`block`;
+        //     renderLocAll.innerHTML=``;
+        //     let category = e.target.textContent;
+        //     console.log(category);
+        //     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?i="+category).then(res => res.json()).then(res=>{
+        //         console.log(res);
+        //         for(let item of res.meals){
+        //             renderLocAll.innerHTML+=
+        //             `   
+        //                 <div class="itemList">
+        //                     <div class="img"><img src="${item.strMealThumb}" data-id="${item.idMeal}" onclick="singleMealFull(event)"></div>
+        //                     <div class="name">${item.strMeal}</div>
+        //                 </div>
+        //             `
+        //         }
+        //     });
+
+        // }
 
 
     </script>
