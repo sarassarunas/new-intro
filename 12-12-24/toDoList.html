@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<body>
+    <script>
+        function handleForm(e) {
+    e.preventDefault();
+    const value = e.target.querySelector('input').value;
+    
+    // localStorage.setItem("Temporary", value)
+    // let temp_value = localStorage.getItem("Temporary")
+    // if data is not empty we take the data inside
+    if (localStorage.getItem("data")) {
+        let data = JSON.parse(localStorage.getItem("data"))
+        data.push(value);
+        localStorage.setItem("data", JSON.stringify(data))
+    // if data is empty we put data in it
+    } else {
+       
+        localStorage.setItem("data", JSON.stringify([value]))
+        // data = localStorage.getItem("data")
+    }
+}
+    </script>
+</body>
+</html>

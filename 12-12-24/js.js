@@ -4,21 +4,31 @@ let page = 1;
 let totalPages = 0;
 let lastTimeSearch = [{movie:``,page:0}];
 console.log(lastTimeSearch);
-lastTimeSearch=JSON.parse(localStorage.getItem(`lastEvent`));
+// lastTimeSearch=JSON.parse(localStorage.getItem(`lastEvent`));
 
-if(lastTimeSearch[0].movie.length>0) {
-    page = lastTimeSearch[0].page;
-    searchPhrase = lastTimeSearch[0].movie;
-    document.querySelector(`input`).value=searchPhrase;
-    render();
-}
+
 
 function search(e) {
     e.preventDefault();
-    page = 1;
+    // page = 1;
     searchPhrase = document.querySelector(`input`).value;
     render();
     
+}
+function addToStorage () {
+    
+    console.log(`veikia add to storage`)
+    // if(lastTimeSearch[0].movie.length>0) {
+    //     page = lastTimeSearch[0].page;
+    //     searchPhrase = lastTimeSearch[0].movie;
+    //     document.querySelector(`input`).value=searchPhrase;
+    //     render();
+    // }
+        // lastTimeSearch[0].movie=searchPhrase;
+        // lastTimeSearch[0].page=page;
+        // console.log(lastTimeSearch);
+        // localStorage.setItem(`lastEvent`,JSON.stringify(lastTimeSearch));
+
 }
 function render() {
     // console.log(`veikia?`);
@@ -40,11 +50,9 @@ function render() {
                 </div>
             `
         ).join(``);
-    lastTimeSearch[0].movie=searchPhrase;
-    lastTimeSearch[0].page=page;
-    console.log(lastTimeSearch);
-    localStorage.setItem(`lastEvent`,JSON.stringify(lastTimeSearch));
-    })
+   
+    });
+    addToStorage();
     // https://www.omdbapi.com/?apikey=5343f40a&i=tt1285016
     // https://www.omdbapi.com/?apikey=5343f40a&s=batman
     // https://www.omdbapi.com/?apikey=5343f40a&s=batman&page=1

@@ -15,10 +15,11 @@
                 <button class="btn btn-primary">Ieskoti</button>
                 <button class="btn btn-danger" onclick="cleanStorage()">Isvalyti istorija</button>
             </form>
-            <div class="pages container d-flex p-2 justify-content-center column-gap-3">
-                <div class="prevPage" onclick="prevPage()">Prev</div>
+            <button class="btn btn-secondary" onclick="addToStorage(event)">ikelti</button>
+            <div class="pages container d-flex p-2 justify-content-center column-gap-3 align-items-center">
+                <button class="prevPage btn btn-light" onclick="prevPage()">Prev</button>
                 <div class="currentPage">Current: 0</div>
-                <div class="nextPage" onclick="nextPage()">Next</div>
+                <button class="nextPage btn btn-light" onclick="nextPage()">Next</button>
                 <div class="totalPages">Total: 0</div>
             </div>
         </div>
