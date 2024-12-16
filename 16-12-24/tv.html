@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Televizorius</title>
+</head>
+<body>
+    <script>
+        class televizorius {
+            
+            constructor(gamintojas) {
+              this.gamintojas=gamintojas;
+              this.kanalas=1;
+              this.garsas=50; 
+            }
+            
+
+            setGarsas(garsumas){
+                if(garsumas>=0 && garsumas<=100) {
+                    return this.garsas=garsumas;
+                }
+            }
+            setChannel(channel) {
+                if(channel<=50 && channel>0) {
+                    return this.kanalas=channel;
+                }
+            }
+            setResset() {
+                this.garsas=50; 
+                this.kanalas=1; 
+            }
+            kaRodo() {
+                console.log(`Televizorius: ${this.gamintojas} siuo metu rodo ${this.kanalas} kanala, garsas yra ${this.garsas}`);
+            }
+        }
+        const sonyTv = new televizorius(`Sony`);
+        console.log(sonyTv);
+        sonyTv.setGarsas(23);
+        console.log(sonyTv);
+        sonyTv.setChannel(15);
+        console.log(sonyTv);
+        sonyTv.setChannel(51);
+        console.log(sonyTv);
+        sonyTv.setResset();
+        console.log(sonyTv);
+        sonyTv.kaRodo();
+        sonyTv.setChannel(35);
+        sonyTv.setGarsas(88);
+        sonyTv.kaRodo();
+        sonyTv.setResset();
+    </script>
+</body>
+</html>
