@@ -1,0 +1,19 @@
+section.fourth .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: row-reverse;
+}
+section.fourth .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.fourth img {
+    width: 100%;
+}
+section.fourth {
+    background-image: url('./bearBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

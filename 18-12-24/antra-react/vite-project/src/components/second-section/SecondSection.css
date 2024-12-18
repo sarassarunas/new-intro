@@ -1,0 +1,19 @@
+section.second .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: row-reverse;
+}
+section.second .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.second img {
+    width: 100%;
+}
+section.second {
+    background-image: url('./dogBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

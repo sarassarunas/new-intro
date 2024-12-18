@@ -1,0 +1,18 @@
+section.third .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+section.third .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.third img {
+    width: 100%;
+}
+section.third {
+    background-image: url('./squirrelBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

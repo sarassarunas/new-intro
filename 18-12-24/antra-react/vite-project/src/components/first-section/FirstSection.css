@@ -1,0 +1,18 @@
+section.first .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+section.first .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.first img {
+    width: 100%;
+}
+section.first {
+    background-image: url('./catBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

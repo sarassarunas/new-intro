@@ -1,0 +1,8 @@
+header .logo img {
+    max-width: 50px;
+    
+}
+.logo {
+    align-items: center;
+    display: flex;
+}

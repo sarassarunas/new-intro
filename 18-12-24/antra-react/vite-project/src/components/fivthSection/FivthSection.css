@@ -1,0 +1,18 @@
+section.fivth .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+section.fivth .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.fivth img {
+    width: 100%;
+}
+section.fivth {
+    background-image: url('./elephantBg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

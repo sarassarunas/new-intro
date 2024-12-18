@@ -1,0 +1,19 @@
+section.sixth .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: row-reverse;
+}
+section.sixth .content>div {
+    align-self: center;
+    width: 450px;
+}
+section.sixth img {
+    width: 100%;
+}
+section.sixth {
+    background-image: url('./flamingoBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
