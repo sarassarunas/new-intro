@@ -1,0 +1,15 @@
+button.btn.btn-warning {
+    width: max-content;
+}
+.ratings {
+    position: relative;
+    width: max-content;
+}
+.ratings .active {
+    position:absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+i.bi.bi-star-fill {
+    color: #dcdc35;
+}
