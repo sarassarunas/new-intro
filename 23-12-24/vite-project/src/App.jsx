@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Search from '../components/searches/Search';
+import KryziaiNuliai from '../components/xo/KryziaiNuliai';
 import './App.css'
 
 
@@ -29,6 +30,9 @@ function App() {
       <button onClick={changeNrPlus}>-1</button>
       <div className="paieska">
         <Search/>
+      </div>
+      <div className="kryziaiNuliai">
+        <KryziaiNuliai/>
       </div>
     </>
   )

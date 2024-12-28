@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ListResults from "../listResults/ListResults";
+// import ListResults from "../listResults/ListResults";
 
 
 
@@ -46,27 +46,27 @@ const data = [
 `How much house can I afford`
 ];
 
-let resultDummy = [];
+// let resultDummy = [];
 
 // let [phrase, setPhrase] = useState(``);
 
 function Search() {
     let [phrase, setPhrase] = useState(``);
-    let [result, setResult] = useState([]);
+    // let [result, setResult] = useState([]);
     // console.log(data);
     function searchPhrase(e) {
         let resultDummy = [];
         setPhrase(e.target.value);
         
-        data.map(str=> {
+        // data.map(str=> {
             
-            if(phrase!==``) {    
-                if (str.toLowerCase().includes(phrase.toLowerCase())) {
-                        resultDummy.push(str);
-                        setResult(resultDummy);
-                    }
-                }
-            })
+        //     if(phrase!==``) {    
+        //         if (str.toLowerCase().includes(phrase.toLowerCase())) {
+        //                 resultDummy.push(str);
+        //                 setResult(resultDummy);
+        //             }
+        //         }
+        //     })
     }
 
     return (
@@ -75,11 +75,22 @@ function Search() {
             <input type="text" onChange={searchPhrase}/>
             <div className="phrases">
                 <ul>
+                    {phrase !== '' ? data.filter((search, idx)=>
+                    
+                    search.toLocaleLowerCase().includes(phrase.toLocaleLowerCase())
+                    
+                    ).slice(0,5).map(
+                       (string, idx)=><li key={idx}>{string}</li> 
+                    )
+                    : ''
+                    }
+                    </ul>
+                {/* <ul>
                 {result.map((text,id)=>
                 <ListResults text={text} key={id}/>
                 )
                 }
-                </ul>
+                </ul> */}
                 </div>
         </>
     )
