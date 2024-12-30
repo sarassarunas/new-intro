@@ -1,6 +1,10 @@
 import './Product.css'
+import AddToCart from '../addToCart/AddToCart.jsx'
+
 
 function Product(props) {
+    
+        
     return (
         <>
         <div className='product d-flex border-top border-bottom align-items-top'>
@@ -41,7 +45,7 @@ function Product(props) {
                     }
                     
                 </div>
-                <button type="button" className="btn btn-warning px-4 my-4">Add to cart</button>
+                <button type="button" id={props.id} className="btn btn-warning px-4 my-4"onClick={AddToCart}>Add to cart</button>
             </div>
         </div>
         </>

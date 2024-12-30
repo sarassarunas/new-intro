@@ -20,7 +20,7 @@ function KryziaiNuliai() {
         }
 
         setButtons(data);
-        // console.log(data);
+        console.log(data);
         // console.log(buttons);
         // console.log(ended);
         
