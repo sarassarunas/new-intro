@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     const [data,setData] = useState([]);
-    const [searchName,setSearchName] = useState(`vodka`);
+    const [searchName,setSearchName] = useState(``);
     const inputText = useRef();
 
     function search(e) {
@@ -13,6 +13,8 @@ function Home() {
     }
 
     useEffect(() => {
+        if(searchName==='') 
+            return;
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchName}`).then(
             resp=>resp.json()).then(resp=>{
                 setData(resp.drinks);
