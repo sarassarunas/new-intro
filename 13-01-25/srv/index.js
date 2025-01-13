@@ -27,10 +27,18 @@ app.post('/api', async (req, res) => {
     req.body.count=0;
     try {
         await Video.create(req.body);
-        res.json('Naujas produktas sėkmingai pridetas');
+        res.json('Naujas video sėkmingai pridetas');
     } catch {
         res.status(500).json('Įvyko serverio klaida');
     }
 });
+
+app.get('/api/:id', async (req, res) => {
+    try {
+        res.json(await Video.findById(req.params.id));
+    } catch {
+        res.status(500).json('Įvyko serverio klaida');
+    }
+}); 
 
 app.listen(3000);
