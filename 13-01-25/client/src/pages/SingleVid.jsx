@@ -9,7 +9,7 @@ function SingleVid() {
     
 
     useEffect(() => {
-        axios.get('/api/' + id)
+        axios.get('/api/video/' + id)
         .then(resp => {
             setData(resp.data);
             

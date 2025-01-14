@@ -8,7 +8,7 @@ function Home() {
 
     useEffect(()=>{
 
-        axios.get('/api').then(resp=>setData(resp.data)).catch(error=>setAlert({
+        axios.get('/api/video').then(resp=>setData(resp.data)).catch(error=>setAlert({
             message:error.response.data,
             status: 'danger'
         }));
